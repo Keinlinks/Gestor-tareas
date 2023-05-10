@@ -25,13 +25,7 @@
             "inlineStyleLanguage": "sass",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.sass"],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
