@@ -1,0 +1,33 @@
+//task
+
+.task
+    display: grid
+    grid-template-columns: 5fr 6fr
+    grid-template-rows: 1fr 1fr
+    grid-column-gap: -10px
+    border: 1px solid white
+    padding: 8px
+    border-radius: 10px
+    margin: 10px
+    
+.task_name
+    font-size: 1.2rem
+    &:hover
+        cursor: pointer
+        color: hsl(75, 40%, 100%)
+.fecha
+    font-size: 1rem
+    color: hsl(47, 15%, 43%)
+.descripcion
+    font-size: 0.9rem
+    grid-column-start: 1
+    grid-column-end: 3
+    border: 1px solid hsl(30, 2%, 20%)
+    padding: 5px
+    border-radius: 5px
+.prioridad
+    display: flex
+    font-size: 1.1rem
+    justify-content: center
+    align-items: center
+    
