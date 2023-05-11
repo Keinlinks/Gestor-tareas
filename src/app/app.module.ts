@@ -8,6 +8,10 @@ import { HomeComponent } from './components/home/home.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { TaskComponent } from './components/task/task.component';
+import { MoreInfoComponent } from './components/more-info/more-info.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,18 @@ import { TaskComponent } from './components/task/task.component';
     HomeComponent,
     TaskListComponent,
     TaskFormComponent,
-    TaskComponent
+    TaskComponent,
+    MoreInfoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MoreInfoComponent],
 })
-export class AppModule { }
+export class AppModule {}

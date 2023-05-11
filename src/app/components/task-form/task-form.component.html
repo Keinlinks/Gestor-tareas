@@ -1,8 +1,13 @@
 <div class="container">
-  <form>
+  <form id="dataForm" novalidate [formGroup]="taskForm">
     <div class="form">
       <label for="name">Nombre de la tarea: </label>
-      <input id="name" type="text" placeholder="Nombre..." />
+      <input
+        id="name"
+        type="text"
+        placeholder="Nombre..."
+        formControlName="nombre"
+      />
     </div>
     <div class="form_descripcion form">
       <label for="descripcion">Descripcion: </label>
@@ -10,26 +15,46 @@
         type="text"
         id="descripcion"
         placeholder="Descripcion..."
+        formControlName="descripcion"
       ></textarea>
     </div>
     <div class="form">
       <label for="inicio">Fecha de inicio: </label>
-      <input type="date" id="inicio" />
+      <input type="date" id="inicio" formControlName="f_inicio" />
     </div>
     <div class="form">
       <label for="limite">Fecha limite: </label>
-      <input type="date" id="limite" />
+      <input type="date" id="limite" formControlName="f_limite" />
     </div>
     <div class="prioridad">
       <label for="prioridad form">Prioridad</label>
       <div>
         <label for="alto">Alto</label>
-        <input id="alto" type="radio" name="prioridad" />
+        <input
+          id="alto"
+          type="radio"
+          name="prioridad"
+          value="alto"
+          formControlName="prioridad"
+        />
         <label for="medio">Medio</label>
-        <input id="medio" type="radio" name="prioridad" />
+        <input
+          id="medio"
+          type="radio"
+          name="prioridad"
+          value="medio"
+          formControlName="prioridad"
+        />
         <label for="bajo">Bajo</label>
-        <input id="bajo" type="radio" name="prioridad" />
+        <input
+          id="bajo"
+          type="radio"
+          name="prioridad"
+          value="bajo"
+          formControlName="prioridad"
+        />
       </div>
     </div>
+    <button type="submit" [disabled]="taskForm.invalid">Agregar!</button>
   </form>
 </div>
