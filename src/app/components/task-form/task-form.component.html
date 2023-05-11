@@ -1,1 +1,35 @@
-<p>task-form works!</p>
+<div class="container">
+  <form>
+    <div class="form">
+      <label for="name">Nombre de la tarea: </label>
+      <input id="name" type="text" placeholder="Nombre..." />
+    </div>
+    <div class="form_descripcion form">
+      <label for="descripcion">Descripcion: </label>
+      <textarea
+        type="text"
+        id="descripcion"
+        placeholder="Descripcion..."
+      ></textarea>
+    </div>
+    <div class="form">
+      <label for="inicio">Fecha de inicio: </label>
+      <input type="date" id="inicio" />
+    </div>
+    <div class="form">
+      <label for="limite">Fecha limite: </label>
+      <input type="date" id="limite" />
+    </div>
+    <div class="prioridad">
+      <label for="prioridad form">Prioridad</label>
+      <div>
+        <label for="alto">Alto</label>
+        <input id="alto" type="radio" name="prioridad" />
+        <label for="medio">Medio</label>
+        <input id="medio" type="radio" name="prioridad" />
+        <label for="bajo">Bajo</label>
+        <input id="bajo" type="radio" name="prioridad" />
+      </div>
+    </div>
+  </form>
+</div>

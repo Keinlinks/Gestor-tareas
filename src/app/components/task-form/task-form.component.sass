@@ -1,0 +1,46 @@
+.container
+    form
+        display: flex
+        flex-direction: column
+        gap:2rem
+        justify-content: flex-start
+        padding: 1rem
+        height: 80vh
+        gap: 2rem
+    
+    padding: 3rem
+    font-size: 1.5rem
+    
+input
+    border-radius: 5px
+    font-size: 1.2rem
+    height: 1.5rem
+.form
+    display: grid
+    grid-template-columns: 1fr 2fr
+    width: 50%
+    
+    label
+        justify-self: center
+.form_descripcion
+    flex-basis: 5rem
+textarea
+    resize: none
+#inicio
+    &:focus
+        background-color: hsl(131, 55%, 40%)
+#limite
+    &:focus
+        background-color: hsl(357, 92%, 45%)
+.prioridad
+    display: grid
+    grid-template-columns: 1fr 2fr
+    width: 50%
+    justify-content: space-around
+    label
+        justify-self: center
+    div
+        display: flex
+        justify-content: space-around
+        input
+            
