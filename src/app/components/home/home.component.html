@@ -1,23 +1,33 @@
+<ng-container *ngIf="false">{{ pendientes[1].estado }}</ng-container>
 <div class="container">
   <div class="contenedor">
     <h2 id="pendiente">Tareas Pendientes</h2>
     <hr />
     <div class="contenedor_task">
-      <app-task></app-task>
+      <app-task
+        *ngFor="let task of pendientes; let i = index"
+        [task]="task"
+      ></app-task>
     </div>
   </div>
   <div class="contenedor">
     <h2 id="proceso">En proceso</h2>
     <hr />
     <div class="contenedor_task">
-      <app-task></app-task>
+      <app-task
+        *ngFor="let task of proceso; let i = index"
+        [task]="task"
+      ></app-task>
     </div>
   </div>
   <div class="contenedor">
     <h2 id="finalizada">Finalizadas</h2>
     <hr />
     <div class="contenedor_task">
-      <app-task></app-task>
+      <app-task
+        *ngFor="let task of finalizado; let i = index"
+        [task]="task"
+      ></app-task>
     </div>
   </div>
 </div>

@@ -34,7 +34,7 @@
           id="alto"
           type="radio"
           name="prioridad"
-          value="alto"
+          value="Alto"
           formControlName="prioridad"
         />
         <label for="medio">Medio</label>
@@ -42,7 +42,7 @@
           id="medio"
           type="radio"
           name="prioridad"
-          value="medio"
+          value="Medio"
           formControlName="prioridad"
         />
         <label for="bajo">Bajo</label>
@@ -50,11 +50,13 @@
           id="bajo"
           type="radio"
           name="prioridad"
-          value="bajo"
+          value="Bajo"
           formControlName="prioridad"
         />
       </div>
     </div>
-    <button type="submit" [disabled]="taskForm.invalid">Agregar!</button>
+    <button type="reset" [disabled]="taskForm.invalid" (click)="submit()">
+      Agregar!
+    </button>
   </form>
 </div>

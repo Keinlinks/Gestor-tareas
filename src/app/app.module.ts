@@ -12,6 +12,9 @@ import { MoreInfoComponent } from './components/more-info/more-info.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],

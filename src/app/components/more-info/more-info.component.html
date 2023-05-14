@@ -1,3 +1,16 @@
-<div class="container">
-  <p>AFDASDFSDF</p>
+<div mat-dialog-content class="full-height full-width task">
+  <div class="div">
+    <p class="task_name">{{ data.nombre }}</p>
+    <p class="fecha">Inicio: {{ data.f_inicio }}</p>
+    <p class="fecha">Limite: {{ data.f_limite }}</p>
+  </div>
+  <p class="prioridad">Prioridad:{{ data.prioridad }}</p>
+  <button id="eliminar_button" class="buttons">Eliminar</button>
+  <button id="editar_button" class="buttons">Editar</button>
+  <p class="descripcion">
+    {{ data.descripcion }}
+    <span style="font-size: 0.6rem; color: gray"
+      >Creado en {{ data.creacion }}</span
+    >
+  </p>
 </div>

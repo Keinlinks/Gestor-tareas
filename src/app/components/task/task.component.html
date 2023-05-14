@@ -1,14 +1,13 @@
-<div class="task">
+<div #fondo class="task">
   <div class="div">
-    <p class="task_name" (click)="moreInfo()">Ir de compras</p>
-    <p class="fecha">Inicio: 01/08/2023</p>
-    <p class="fecha">Limite: 14/08/2023</p>
+    <p class="task_name" (click)="moreInfo()">
+      {{ task.nombre }}
+    </p>
+    <p class="fecha">Inicio: {{ task.f_inicio }}</p>
+    <p class="fecha">Limite: {{ task.f_limite }}</p>
   </div>
-  <p class="prioridad">Prioridad: Urgente!</p>
+  <p class="prioridad">Prioridad: {{ task.prioridad }}</p>
   <p class="descripcion">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque,
-    facilis nobis vitae eos sed exercitationem magnam numquam? Praesentium,
-    alias numquam suscipit soluta cum ipsam totam, voluptate minima, dicta culpa
-    repellat.
+    {{ task.descripcion }}
   </p>
 </div>
