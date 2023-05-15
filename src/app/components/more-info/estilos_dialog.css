@@ -1,0 +1,23 @@
+button:hover {
+  cursor: pointer;
+  background-color: hsl(215, 28%, 50%);
+}
+
+button::selection {
+}
+::ng-deep .mat-dialog-container {
+  background-color: hsl(215, 28%, 24%);
+  color: white;
+  padding: 5px;
+  justify-content: center;
+}
+button {
+  width: 40px;
+}
+div {
+  justify-content: center;
+  margin: 10px;
+}
+h1 {
+  text-align: center;
+}

@@ -27,6 +27,7 @@ export class TaskComponent implements OnInit, AfterViewInit {
     this.dialog.open(MoreInfoComponent, {
       width: '35%',
       data: this.task,
+      panelClass: 'matDialog',
     });
   }
   colorFondo() {

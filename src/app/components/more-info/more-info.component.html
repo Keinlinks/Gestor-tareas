@@ -5,8 +5,21 @@
     <p class="fecha">Limite: {{ data.f_limite }}</p>
   </div>
   <p class="prioridad">Prioridad:{{ data.prioridad }}</p>
-  <button id="eliminar_button" class="buttons">Eliminar</button>
+  <button id="eliminar_button" class="buttons" (click)="eliminar()">
+    Eliminar
+  </button>
   <button id="editar_button" class="buttons">Editar</button>
+  <button
+    id="cambiar"
+    class="buttons"
+    (click)="Cambiar_estado()"
+    *ngIf="data.estado < 3"
+  >
+    <span *ngIf="data.estado == 1; else finalizado">Hacer tarea</span>
+    <ng-template #finalizado
+      ><span *ngIf="data.estado == 2">Finalizado!</span></ng-template
+    >
+  </button>
   <p class="descripcion">
     {{ data.descripcion }}
     <span style="font-size: 0.6rem; color: gray"

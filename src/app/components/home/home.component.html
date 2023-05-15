@@ -4,30 +4,28 @@
     <h2 id="pendiente">Tareas Pendientes</h2>
     <hr />
     <div class="contenedor_task">
-      <app-task
-        *ngFor="let task of pendientes; let i = index"
-        [task]="task"
-      ></app-task>
+      <ng-container *ngFor="let task of pendientes; let i = index">
+        <app-task *ngIf="task.estado == 1" [task]="task"></app-task>
+      </ng-container>
     </div>
   </div>
   <div class="contenedor">
     <h2 id="proceso">En proceso</h2>
     <hr />
     <div class="contenedor_task">
-      <app-task
-        *ngFor="let task of proceso; let i = index"
-        [task]="task"
-      ></app-task>
+      <ng-container *ngFor="let task of pendientes; let i = index">
+        <app-task *ngIf="task.estado == 2" [task]="task"></app-task>
+      </ng-container>
     </div>
   </div>
   <div class="contenedor">
     <h2 id="finalizada">Finalizadas</h2>
     <hr />
     <div class="contenedor_task">
-      <app-task
-        *ngFor="let task of finalizado; let i = index"
-        [task]="task"
-      ></app-task>
+      <ng-container *ngFor="let task of pendientes; let i = index">
+        <app-task *ngIf="task.estado == 3" [task]="task"></app-task>
+      </ng-container>
     </div>
   </div>
 </div>
+<button (click)="Prueba()">ssss</button>
