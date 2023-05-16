@@ -1,10 +1,10 @@
-<ng-container *ngIf="false">{{ pendientes[1].estado }}</ng-container>
+<ng-container *ngIf="false">{{ data[1].estado }}</ng-container>
 <div class="container">
   <div class="contenedor">
     <h2 id="pendiente">Tareas Pendientes</h2>
     <hr />
     <div class="contenedor_task">
-      <ng-container *ngFor="let task of pendientes; let i = index">
+      <ng-container *ngFor="let task of data; let i = index">
         <app-task *ngIf="task.estado == 1" [task]="task"></app-task>
       </ng-container>
     </div>
@@ -13,7 +13,7 @@
     <h2 id="proceso">En proceso</h2>
     <hr />
     <div class="contenedor_task">
-      <ng-container *ngFor="let task of pendientes; let i = index">
+      <ng-container *ngFor="let task of data; let i = index">
         <app-task *ngIf="task.estado == 2" [task]="task"></app-task>
       </ng-container>
     </div>
@@ -22,7 +22,7 @@
     <h2 id="finalizada">Finalizadas</h2>
     <hr />
     <div class="contenedor_task">
-      <ng-container *ngFor="let task of pendientes; let i = index">
+      <ng-container *ngFor="let task of data; let i = index">
         <app-task *ngIf="task.estado == 3" [task]="task"></app-task>
       </ng-container>
     </div>

@@ -13,18 +13,12 @@ import { Task } from 'src/app/Interface/Task';
 export class HomeComponent implements OnInit {
   constructor(private servicio: ServicioService) {}
   //data
-  data: Task[] = [];
-
-  pendientes: Task[] = [];
-  proceso: Task[] = [];
-  finalizado: Task[] = [];
+  data: any[] = [];
 
   ngOnInit(): void {
-    this.data = this.servicio.getTasks();
-    this.servicio.getObservable().subscribe(
+    this.servicio.getData().subscribe(
       (data) => {
         this.data = data;
-        this.pendientes = data;
       },
       (error) => console.error(error)
     );

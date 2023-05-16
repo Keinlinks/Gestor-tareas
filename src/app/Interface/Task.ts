@@ -1,4 +1,5 @@
 export interface Task {
+  id?: string;
   nombre: string;
   descripcion: string;
   f_inicio: string;

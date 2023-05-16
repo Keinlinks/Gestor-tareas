@@ -14,25 +14,29 @@ import { ServicioService } from 'src/app/servicio.service';
   styleUrls: ['./more-info.component.sass'],
 })
 export class MoreInfoComponent implements OnInit {
+  id: string = '';
   constructor(
     public dialogRef: MatDialogRef<MoreInfoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Task,
     private servicio: ServicioService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private firestore: AngularFirestore
   ) {}
   ngOnInit(): void {
     console.log(this.data);
   }
   eliminar() {
-    this.dialog.open(Confirmacion, { data: this.data });
+    this.dialog.open(Confirmacion, { data: this.data.id });
   }
 
   cambiar() {}
   editar() {}
   Cambiar_estado() {
     if (this.data.estado == 1) this.data.estado = 2;
-    if (this.data.estado == 2) this.data.estado = 3;
-    //this.servicio.updateState(this.data, this.data);
+    else this.data.estado = 3;
+    let idTask = this.data.id ?? '';
+    this.servicio.updateState(idTask, this.data);
+    console.log(idTask);
   }
 }
 
@@ -45,7 +49,7 @@ export class MoreInfoComponent implements OnInit {
       style="justify-content: center; display:flex; gap: 5px"
     >
       <button (click)="eliminar()">Si</button>
-      <button mat-button mat-dialog-close>No</button>
+      <button mat-button mat-dialog-close (click)="close()">No</button>
     </div>`,
   styleUrls: ['./estilos_dialog.css'],
 })
@@ -53,10 +57,14 @@ export class Confirmacion {
   constructor(
     private servicio: ServicioService,
     public dialogRef: MatDialogRef<Confirmacion>,
-    @Inject(MAT_DIALOG_DATA) public data: Task
+    @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
   eliminar() {
     console.log('Eliminar entra');
     this.servicio.delete(this.data);
+    this.dialogRef.close();
+  }
+  close() {
+    this.dialogRef.close();
   }
 }

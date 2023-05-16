@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { Task } from './Interface/Task';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
 export class ServicioService {
-  constructor(private firestore: AngularFirestore) {
-    this.loadTask();
-  }
+  constructor(private firestore: AngularFirestore) {}
   private dataSubject = new Subject<Task[]>();
   data: Task[] = [];
   //agregar
@@ -25,6 +24,22 @@ export class ServicioService {
     return this.data;
   }
   //obtener
+  getData(): Observable<any[]> {
+    let task;
+    return this.firestore
+      .collection('tareas_1')
+      .snapshotChanges()
+      .pipe(
+        map((actions) =>
+          actions.map((a) => {
+            const data = a.payload.doc.data() as Task;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          })
+        )
+      );
+  }
+
   loadTask() {
     this.firestore
       .collection<Task>('tareas_1')
@@ -46,10 +61,10 @@ export class ServicioService {
     return this.dataSubject.asObservable();
   }
   //eliminar
-  delete(task: Task) {
+  delete(id: string) {
     this.firestore
       .collection('tareas_1')
-      .doc(task.nombre)
+      .doc(id)
       .delete()
       .then(() => console.log('Dato eliminado correctamente'))
       .catch((error) => console.error('Error al eliminar el dato:', error));
